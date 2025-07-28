@@ -217,27 +217,41 @@ position: absolute;
   color: #222;
   line-height: 1.5;
 }
-    .characteristics {
+        .characteristics {
       background-color: #22232a;
       padding: 20px;
       margin-bottom: 20px;
       font-size: 0.95em;
       color: var(--white);
     }
-    .characteristics .row {
+.characteristics .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.characteristics .row span:first-child {
+  width: 40%;            /* ліва колонка */
+  text-align: left;
+  font-weight: bold;
+  color: var(--primary-yellow);
+}
 
-      text-align: left;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 30px;
-    }
-    .characteristics .row span:first-child {
-      font-weight: bold;
-      color: var(--primary-yellow);
-    }
-    .characteristics .row span:last-child {
-      color: var(--primary-yellow);
-    }
+.characteristics .row span:last-child {
+  width: 60%;            /* права колонка */
+  text-align: right;
+  color: var(--primary-yellow);
+}
+.characteristics .label {
+  width: 150px; /* або інше значення */
+  font-weight: bold;
+  color: var(--primary-yellow);
+  flex-shrink: 0;
+}
+
+.characteristics .value {
+  color: var(--primary-yellow);
+}
 	.characteristics img {
 	  display: block;
 	  width: 100%;
@@ -520,15 +534,36 @@ position: absolute;
 	  ХАРАКТЕРИСТИКИ</h1>
   </div>
 	<img src="ch.jpg" alt="Опис GIF" style="width: 100%; height: auto; margin-bottom: -0.1cm;">
-  <div class="section characteristics"> 
-	<div class="row"><span>Матеріал:</span><span>АБС</span></div>
-    <div class="row"><span>Тип:</span><span>ароматизатор</span></div>
-    <div class="row"><span>Особливості:</span><span>сонячна панель, обертання</span></div>
-    <div class="row"><span>Розміщення:</span><span>приладова панель авто, дім, офіс</span></div>
-    <div class="row"><span>Розмір:</span><span>10.4 см × 8.5 см × 6 см</span></div>
-    <div class="row"><span>Комплектація:</span><span>Ароматизатор, піпетка, аромомасло</span></div>
-    <button class="order-btn" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });">ЗАМОВИТИ ЗІ ЗНИЖКОЮ</button>
+<div class="section characteristics"> 
+  <div class="row">
+    <span class="label">Матеріал:</span>
+    <span class="value">АБС</span>
   </div>
+  <div class="row">
+    <span class="label">Тип:</span>
+    <span class="value">ароматизатор</span>
+  </div>
+  <div class="row">
+    <span class="label">Особливості:</span>
+    <span class="value">сонячна панель, обертання</span>
+  </div>
+  <div class="row">
+    <span class="label">Розміщення:</span>
+    <span class="value">приладова панель авто, дім, офіс</span>
+  </div>
+  <div class="row">
+    <span class="label">Розмір:</span>
+    <span class="value">10.4 см × 8.5 см × 6 см</span>
+  </div>
+  <div class="row">
+    <span class="label">Комплектація:</span>
+    <span class="value">Ароматизатор, піпетка, аромомасло</span>
+  </div>
+
+  <button class="order-btn" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });">
+    ЗАМОВИТИ ЗІ ЗНИЖКОЮ
+  </button>
+</div>
 
   <div style="font-family: 'Segoe UI'">
     <p style="font-size: 130%; font-weight: bold;">
