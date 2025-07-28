@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ароматизатор Автомобільний</title>
+  <style>
+    :root {
+      --primary-yellow: #FFCD00;
+      --primary-red: #cc0000;
+      --primary-dark: #2f3039;
+      --light-gray-bg: #f9f9f9;
+      --white: #ffffff;
+    }
+    body {
+	  max-width: 800px;
+      margin: 0 auto;
+      padding: 0;
+      font-family: "Roboto", sans-serif;
+      background-color: var(--light-gray-bg);
+      color: #000;
+      text-align: center;
+    }
+   .section {
+	}
+	.texting {
+	  color: #444;
+	  padding: 20px;
+	}
+	.texting p {
+	  line-height: 1.6;
+	  font-size: 16px;
+	    margin-bottom: 1.5em;
+	}
+	.texting h2 {
+	  font-size: 1.6em; 
+	  font-weight: 750;
+	  
+	  text-align: center;
+      margin-top: 0;
+      margin-bottom: 18px;
+      color: #1a1a1a;
+      letter-spacing: 0.5px;
+}
+    .white-block {
+	  background-color: white;
+	  color: #262626;
+	  padding-top: 0.1px;
+      text-align: center;
+    }
+	.gray-block {
+	  background-color: var(--primary-dark);
+	  color: var(--white);
+	}
+	.gray-block h1 {
+	  padding: 10px;
+	  font-weight: bold;
+      text-align: center;
+      margin-top: -4px;
+	  margin-bottom: 0; 
+    }
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  max-width: 600px;
+}
+.full-width-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ribbon {
+position: absolute;
+  top: 12px;
+  right: -50px;
+  transform: rotate(45deg);
+  background-color: #ff3333;
+  color: white;
+  padding: 6px 15px;
+  width: 150px;
+  height: 27px;
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.ribbon span {
+  display: block;
+  padding-left: 20px;
+}
+	.ended1,.ended2 {
+	  padding-left: 0.3cm;
+      padding-right: 0.3cm;
+      font-size: 85%;
+	  line-height: 1.6;
+	  margin-bottom: 0;
+	}
+	.ended1{
+	  padding-bottom: 0.5cm;}
+    .price-block {
+		display: flex;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		height: 60px;
+		overflow: hidden;
+	}
+
+	.price-left, .price-right {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 6 px 12px 8px;
+		height: 100%;
+		position: relative;
+	}
+
+	.price-left {
+	    margin-right: -18px;
+		background: #fff;
+		color: #000;
+		clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+	}
+
+	.price-right {
+		margin-left: -18px;
+		background: linear-gradient(0deg, #ff0000, #ff6900);
+		color: #fff;
+		clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+		text-align: center;
+		
+	}
+
+	.price-left small,
+	.price-right small {
+		font-size: 0.80em;
+		font-weight: 500;
+        margin-bottom: 2px;
+	}
+
+	.price-old {
+		font-size: 2.1em;
+		line-height: 1;
+	}
+	.old-num {
+		text-decoration: line-through;
+	}
+	.price-new {
+		font-weight: bold;
+		font-size: 2.3em;
+		line-height: 1;
+	}
+	.price-old span {
+		font-size: 0.8em;
+		font-weight: 400;
+		margin-left: 4px;
+		color: inherit;
+	}
+	.price-new span {
+		font-size: 0.8em;
+		font-weight: bold;
+		margin-left: 4px;
+		color: inherit;
+	}
+
+    .red-border-block {
+      border: 3.2px solid var(--primary-red);
+      margin: 0;
+      color: #000;
+    }
+    .red-border-block h2 {
+      padding: 16px;
+      color: var(--primary-red);
+      margin-top: 0;
+    }
+	.red-border-block p {
+	  font-size: 130%;
+	}
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 0 8px; /* це додасть відступи від країв усього блоку */
+}
+
+.feature-block {
+  background-color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+}
+
+.feature-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.feature-block p {
+  font-size: 16px;
+  padding: 10px 12px 16px;
+  margin: 0;
+  color: #222;
+  line-height: 1.5;
+}
+    .characteristics {
+      background-color: #22232a;
+      padding: 20px;
+      margin-bottom: 20px;
+      font-size: 0.95em;
+      color: var(--white);
+    }
+    .characteristics .row {
+
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+    .characteristics .row span:first-child {
+      font-weight: bold;
+      color: var(--primary-yellow);
+    }
+    .characteristics .row span:last-child {
+      color: var(--primary-yellow);
+    }
+	.characteristics img {
+	  display: block;
+	  width: 100%;
+	  height: auto;
+	  margin: 0;
+	  padding: 0;
+	  margin-bottom: 20px;
+}
+    .order-btn {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  font-weight: 700;
+	  color: #333;
+	  text-shadow: 0 2px 0 #ffe42c;
+	  letter-spacing: 0.6px;
+	  text-transform: uppercase;
+	  width: 100%;
+	  background: #ffcd00;
+  	  border-radius: 40px;
+	  min-height: 76px;
+	  line-height: 80px;
+	  text-align: center;
+	  box-shadow: 0 5px 0 0 #ff9600;
+	  font-size: 26px;
+	  position: relative;
+	  text-decoration: none;
+	  border: none;
+	}
+	.order-btn--compact {
+	  font-size: 20px;
+	  min-height: 68px;
+	  line-height: 68px;
+	  width: 85%;
+	  margin: 0 auto;
+	}
+    .order-form {
+	  padding-bottom: 1cm;
+      background-color: var(--primary-dark);
+      color: #fff;
+	  padding: 20px;
+	  border-radius: 20px;
+    }
+    .order-form select,
+	.order-form input {
+	  width: 100%;
+      padding: 18px 24px;
+      margin: 10px 0;
+      border-radius: 40px;
+      border: none;
+      font-weight: 600;
+      font-size: 18px;
+      box-sizing: border-box;
+}
+
+    .delivery-section {
+	  display: flex;
+      flex-direction: column;
+      gap: 5px;
+	  line-height: 1.6;
+	  padding: 0 10px;
+	  padding-bottom: 0.5cm;
+	}
+	.delivery-item {
+	  display: flex;
+	  overflow: hidden;
+	}
+
+	.delivery-item:nth-child(even) {
+	  flex-direction: row-reverse;
+	}
+
+	.delivery-item .image {
+	  width: 53%;
+	  object-fit: cover;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.delivery-item .image img {
+	  width: 100%;
+	  height: auto;
+	  max-height: 200px;
+	  object-fit: contain;
+	}
+
+	.delivery-item .text {
+	  width: 47%;
+	  color: #444;
+	  padding: 10px;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: flex-start;
+	  text-align: left;
+	}
+
+	.delivery-item h4 {
+	  color: #e60000;
+	  font-size: 20px;
+	  font-weight: 300;
+	  margin-bottom: 8px;
+	}
+
+	.delivery-item p {
+	  letter-spacing: 0.01em;
+	  font-size: 13px;
+	  color: #444;
+	  margin: 0;
+	}
+.footer {
+  padding: 20px;
+  color: var(--primary-red);
+  font-size: 0.9em;
+  background-color: transparent;
+  text-align: center;
+}
+
+.footer-black {
+  color: #000;
+  font-weight: bold;
+}
+
+.footer a {
+  color: var(--primary-red);
+  margin: 0 4px;
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+.countdown {
+  color: white;
+  text-align: center;
+  padding: 0px 10px;
+  font-size: 1.2em;
+  border-radius: 8px;
+}
+.countdown .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 2.2em;
+  font-weight: bold;
+}
+.countdown .value {
+  font-size: 1em;
+}
+
+.countdown .label {
+  font-size: 0.32em;
+  font-weight: normal;
+  margin: 0 6px 0 2px;
+  position: relative;
+  top: -1px;
+}
+  </style>
+</head>
+<body>
+<script>
+  window.onload = function () {
+    let countdownTime = 5 * 60 * 60 + 45 * 60; // 5h 45min у секундах
+
+    const hoursEl = document.getElementById('hours');
+    const minutesEl = document.getElementById('minutes');
+    const secondsEl = document.getElementById('seconds');
+
+    const timer = setInterval(() => {
+      if (countdownTime <= 0) {
+        clearInterval(timer);
+        return;
+      }
+
+      countdownTime--;
+
+      const hrs = Math.floor(countdownTime / 3600);
+      const mins = Math.floor((countdownTime % 3600) / 60);
+      const secs = countdownTime % 60;
+
+      hoursEl.textContent = String(hrs).padStart(2, '0');
+      minutesEl.textContent = String(mins).padStart(2, '0');
+      secondsEl.textContent = String(secs).padStart(2, '0');
+    }, 1000);
+  };
+</script>
+  <div class="section white-block">
+    <p style="text-transform: uppercase;">НА СОНЯЧНІЙ БАТАРЕЇ</p>
+  </div>
+ <div class ="section gray-block">
+	<h1>АРОМАТИЗАТОР АВТОМОБІЛЬНИЙ</h1>
+	<div class="image-wrapper">
+	<div class="ribbon"><span>37% знижка</span></div>
+	<img src="https://content2.rozetka.com.ua/goods/images/big/490435488.jpg" alt="Опис зображення" class="full-width-image">
+	</div>
+  <div class="price-block">
+  <div class="price-left">
+    <small>Звичайна ціна</small>
+    <div class="price-old">
+	<span class="old-num">524</span><span>грн</span>
+	</div>
+  </div>
+  <div class="price-right">
+    <small>Акційна ціна</small>
+    <div class="price-new">395<span>грн</span></div>
+  </div>
+  </div>
+  <div class="ended1">
+<div class="countdown">
+  <p>До кінця акції залишилось:</p>
+  <div class="time">
+    <span class="value" id="hours">05</span>
+    <span class="label">годин</span>
+    <span class="value" id="minutes">45</span>
+    <span class="label">хвилин</span>
+    <span class="value" id="seconds">00</span>
+    <span class="label">секунд</span>
+  </div>
+</div>
+
+	<p>*- Акція триває з 04.06.2025 по 18.06.2025</p>
+	<p>
+	*- Цiну знижено через випуск нової моделi. Додаткову iнформацiю Вам надасть наш менеджер. Ваша розмова може бути записана з метою покращення якостi обслуговування.
+	</p>
+    <button class="order-btn" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });">ЗРОБИТИ ЗАМОВЛЕННЯ</button>
+  </div>
+  </div>
+  <div class="section red-border-block">
+    <h2>ЗАОЩАДЖУЙ ПРЯМО ЗАРАЗ!</h2>
+    <p>2 шт = <span style="font-weight: bold;">755</span> грн (знижка 5%)</p>
+    <p>3 шт = <span style="font-weight: bold;">1100</span>  грн (знижка 10%)</p>
+    <p>4 шт = <span style="font-weight: bold;">1425</span>  грн (знижка 15%)</p>
+  </div>
+
+  <div class="texting">
+    <h2>Насолоджуйтесь приємним запахом зі стильним аксесуаром</h2>
+    <p>Цей ароматизатор стане стильним аксесуаром для автомобіля. Лопаті вертольота крутяться виключно від сонячних батарей і не потребують заряджання. При обертанні лопаті вертольота сприяють кращому поширенню аромату.</p>
+    <img src="https://smallprices.com.ua/wp-content/uploads/2025/03/000-airwings.gif" alt="Опис GIF" style="width: 100%; height: auto;">
+	<p>Ароматизатор у машину наповнить приємним ароматом салон вашого авто. Улюблений запах допоможе підбадьоритися і сконцентруватися на дорозі. Аксесуар також ефективно нейтралізує неприємні запахи, як-от бензин, тютюновий дим та ін.
+    Працює на сонячній батареї та укомплектований невеликим вентилятором для найкращого поширення свіжого повітря. Сучасний дизайн прекрасно вписується в інтер’єр улюбленого автомобіля, роблячи його цікавішим.</p>
+    <img src="https://vertolet.tiptop-shop.site/2.jpg" alt="Опис зображення" style="
+	width: 100%;
+    height: auto;">
+	<p>Ароматизатор відмінно підійде як подарунок хлопцеві, чоловікові, братові, татові, дідусеві та колезі!</p>
+  </div>
+
+  <div class="section white-block">
+    <h2>ОСОБЛИВОСТІ</h2>
+  </div>
+  <div class="section feature-grid">
+<div class="feature-block">
+    <img src="https://vertolet.tiptop-shop.site/3.jpg" alt="Опис" class="feature-img">
+    <p>Автомобільний ароматизатор вертоліт зручний у використанні, оскільки не потребує заряджання. Він обертатиметься навіть у похмуру погоду.</p>
+  </div>
+  <div class="feature-block">
+    <img src="https://vertolet.tiptop-shop.site/6.jpg" alt="Опис" class="feature-img">
+    <p>Можливість багаторазового використання — конструкція розбірна, що дозволяє при необхідності за допомогою піпетки додати кілька крапель ароматизуючої речовини.</p>
+  </div>
+  <div class="feature-block">
+    <img src="https://vertolet.tiptop-shop.site/5.jpg" alt="Опис" class="feature-img">
+    <p>Вертоліт зроблений із якісного екологічно чистого пластику. Матеріал стійкий до дії прямих сонячних променів. Глянсова поверхня не збирає пил.</p>
+  </div>
+  <div class="feature-block">
+    <img src="https://vertolet.tiptop-shop.site/7.jpg" alt="Опис" class="feature-img">
+    <p>Малогабаритний, легкий за вагою. Зручно кріпиться на торпеду, скло та в інших місцях завдяки клейкій основі.</p>
+  </div>
+  </div>
+
+  <div>
+    <h1 style=
+	"	font-size: 160%;
+	  font-weight: bold;
+      text-align: center;
+      color: var(--white);
+	  background-color: #22232a;
+      padding: 27px;
+      margin-bottom: 0;">
+	  ХАРАКТЕРИСТИКИ</h1>
+  </div>
+	<img src="https://vertolet.tiptop-shop.site/8.jpg" alt="Опис GIF" style="width: 100%; height: auto; margin-bottom: -0.1cm;">
+  <div class="section characteristics"> 
+	<div class="row"><span>Матеріал:</span><span>АБС</span></div>
+    <div class="row"><span>Тип:</span><span>ароматизатор</span></div>
+    <div class="row"><span>Особливості:</span><span>сонячна панель, обертання</span></div>
+    <div class="row"><span>Розміщення:</span><span>приладова панель авто, дім, офіс</span></div>
+    <div class="row"><span>Розмір:</span><span>10.4 см × 8.5 см × 6 см</span></div>
+    <div class="row"><span>Комплектація:</span><span>Ароматизатор, піпетка, аромомасло</span></div>
+    <button class="order-btn" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });">ЗАМОВИТИ ЗІ ЗНИЖКОЮ</button>
+  </div>
+
+  <div style="font-family: 'Segoe UI'">
+    <p style="font-size: 130%; font-weight: bold;">
+	Як замовити</p>
+    <h3 style="font-size: 140%; margin-top: -18px; color: red; font-weight: bold; margin-bottom:2px;">
+	АРОМАТИЗАТОР АВТОМОБІЛЬНИЙ</h3>
+  </div>
+
+  <div class="section delivery-section">
+    <div class="delivery-item">
+      <div class="image"><img src="https://vertolet.tiptop-shop.site/order_1.jpg" alt="Швидка доставка"></div>
+      <div class="text">
+        <h4>Швидка доставка</h4>
+        <p>Доставка Укр та Новою поштою протягом 1-3 днів. Вартість доставки – від 50 грн.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+	  <div class="image"><img src="https://vertolet.tiptop-shop.site/order_2.jpg" alt="Зручна оплата"></div>
+      <div class="text">
+        <h4>Зручна оплата</h4>
+        <p>Оплата провадиться тільки при отриманні замовлення на руки.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="image"> <img src="https://vertolet.tiptop-shop.site/order_3.jpg" alt="Гарантії"></div>
+      <div class="text">
+        <h4>Гарантії</h4>
+        <p>Вся наша продукція пройшла перевірку якості.</p>
+      </div>
+    </div>
+  </div>
+  <div class="section white-block">
+    <p style="text-transform: uppercase;">НА СОНЯЧНІЙ БАТАРЕЇ</p>
+  </div>
+ <div class ="section gray-block">
+	<h1>АРОМАТИЗАТОР АВТОМОБІЛЬНИЙ</h1>
+	<div class="image-wrapper">
+	<div class="ribbon"><span>37% знижка</span></div>
+	<img src="https://content2.rozetka.com.ua/goods/images/big/490435488.jpg" alt="Опис зображення" class="full-width-image">
+	</div>
+  <div class="price-block">
+  <div class="price-left">
+    <small>Звичайна ціна</small>
+    <div class="price-old">
+	<span class="old-num">524</span><span>грн</span>
+	</div>
+  </div>
+  <div class="price-right">
+    <small>Акційна ціна</small>
+    <div class="price-new">395<span>грн</span></div>
+  </div>
+  </div>
+  <div class="ended2">
+    <div class="countdown">
+  <p>До кінця акції залишилось:</p>
+  <div class="time">
+    <span class="value" id="hours">05</span>
+    <span class="label">годин</span>
+    <span class="value" id="minutes">45</span>
+    <span class="label">хвилин</span>
+    <span class="value" id="seconds">00</span>
+    <span class="label">секунд</span>
+  </div>
+</div>
+	<p>*- Акція триває з 04.06.2025 по 18.06.2025</p>
+	<p>
+	*- Цiну знижено через випуск нової моделi. Додаткову iнформацiю Вам надасть наш менеджер. Ваша розмова може бути записана з метою покращення якостi обслуговування.
+	</p>
+  </div>
+    <div class="order-form" id="order-form">
+    <form>
+      <select required>
+        <option disabled selected>Виберіть кількість (шт.)</option>
+        <option>1 шт. – 395 грн (дод. знижка 0%)</option>
+        <option>2 шт. – 755 грн (дод. знижка 5%)</option>
+        <option>3 шт. – 1100 грн (дод. знижка 10%)</option>
+        <option>4 шт. – 1425 грн (дод. знижка 15%)</option>
+      </select>
+      <input type="text" placeholder="Введіть ваше прізвище та ім'я" required>
+      <input type="email" placeholder="Введіть вашу пошту" required>
+      <button type="submit" class="order-btn order-btn--compact">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
+    </form>
+  </div>
+  </div>
+  <img src="https://vertolet.tiptop-shop.site/0303.png" alt="Опис зображення" style="
+	width: 100%;
+    height: auto;">
+	<footer class="footer">
+		<a href="file:///C:/Users/Ligtly/Desktop/index.html">МАГАЗИН НАШИХ ТОВАРІВ</a>
+		<p><span class="footer-black">ТОВ «Ваша компанія»</span></p>
+		<p>
+			<a href="file:///C:/Users/Ligtly/Desktop/index.html">Головна</a> |
+			<a href="file:///C:/Users/Ligtly/Desktop/index.html">Політика конфіденційності</a> |
+			<a href="file:///C:/Users/Ligtly/Desktop/index.html">Угода користувача</a> |
+			<a href="file:///C:/Users/Ligtly/Desktop/index.html">Умови гарантії та повернення</a>
+		</p>
+	</footer>
+</body>
+</html>
