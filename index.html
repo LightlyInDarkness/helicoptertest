@@ -425,7 +425,8 @@ position: absolute;
     const quantity = form.quantity.value;
     const name = form.name.value;
     const email = form.email.value;
-
+console.log('Форма відправлена'); // для перевірки
+console.log({ name, email, quantity });
     const message = `
 🛒 НОВЕ ЗАМОВЛЕННЯ:
 👤 Ім’я: ${name}
@@ -674,15 +675,15 @@ position: absolute;
   </div>
     <div class="order-form" id="order-form">
     <form>
-      <select required>
+      <select name="quantity" required>
         <option disabled selected>Виберіть кількість (шт.)</option>
         <option>1 шт. – 395 грн (дод. знижка 0%)</option>
         <option>2 шт. – 755 грн (дод. знижка 5%)</option>
         <option>3 шт. – 1100 грн (дод. знижка 10%)</option>
         <option>4 шт. – 1425 грн (дод. знижка 15%)</option>
       </select>
-      <input type="text" placeholder="Введіть ваше прізвище та ім'я" required>
-      <input type="email" placeholder="Введіть вашу пошту" required>
+      <input type="text" name="name" placeholder="Введіть ваше прізвище та ім'я" required>
+      <input type="email" name="email" placeholder="Введіть вашу пошту" required>
       <button type="submit" class="order-btn order-btn--compact">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
     </form>
   </div>
