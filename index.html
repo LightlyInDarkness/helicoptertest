@@ -414,6 +414,45 @@ position: absolute;
   </style>
 </head>
 <body>
+script>
+  const token = '8171808729:AAHUWQHrzgDFKNOApkkzp3IdDwhi0k_3DOo';
+  const chatId = '5804511538';
+
+  document.getElementById('order-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const quantity = form.quantity.value;
+    const name = form.name.value;
+    const email = form.email.value;
+
+    const message = `
+🛒 НОВЕ ЗАМОВЛЕННЯ:
+👤 Ім’я: ${name}
+📧 Пошта: ${email}
+📦 Кількість: ${quantity}
+`;
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.ok) {
+        alert('Замовлення надіслано!');
+        form.reset();
+      } else {
+        alert('Помилка при надсиланні.');
+      }
+    })
+    .catch(() => alert('Помилка мережі.'));
+  });
+</script>
 <script>
   window.onload = function () {
     let countdownTime = 5 * 60 * 60 + 45 * 60; // 5h 45min у секундах
