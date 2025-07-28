@@ -415,46 +415,6 @@ position: absolute;
 </head>
 <body>
 <script>
-  const token = '8171808729:AAHUWQHrzgDFKNOApkkzp3IdDwhi0k_3DOo';
-  const chatId = '5804511538';
-
-  document.getElementById('order-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const quantity = form.quantity.value;
-    const name = form.name.value;
-    const email = form.email.value;
-console.log('Форма відправлена'); // для перевірки
-console.log({ name, email, quantity });
-    const message = `
-🛒 НОВЕ ЗАМОВЛЕННЯ:
-👤 Ім’я: ${name}
-📧 Пошта: ${email}
-📦 Кількість: ${quantity}
-`;
-
-    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-      })
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.ok) {
-        alert('Замовлення надіслано!');
-        form.reset();
-      } else {
-        alert('Помилка при надсиланні.');
-      }
-    })
-    .catch(() => alert('Помилка мережі.'));
-  });
-</script>
-<script>
   window.onload = function () {
     let countdownTime = 5 * 60 * 60 + 45 * 60; // 5h 45min у секундах
 
@@ -673,8 +633,8 @@ console.log({ name, email, quantity });
 	*- Цiну знижено через випуск нової моделi. Додаткову iнформацiю Вам надасть наш менеджер. Ваша розмова може бути записана з метою покращення якостi обслуговування.
 	</p>
   </div>
-    <div class="order-form" id="order-form">
-    <form>
+    <div class="order-form">
+    <form id="order-form">
       <select name="quantity" required>
         <option disabled selected>Виберіть кількість (шт.)</option>
         <option>1 шт. – 395 грн (дод. знижка 0%)</option>
@@ -701,5 +661,45 @@ console.log({ name, email, quantity });
 			<a href="file:///C:/Users/Ligtly/Desktop/index.html">Умови гарантії та повернення</a>
 		</p>
 	</footer>
+<script>
+  const token = '8171808729:AAHUWQHrzgDFKNOApkkzp3IdDwhi0k_3DOo';
+  const chatId = '5804511538';
+
+  document.getElementById('order-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const quantity = form.quantity.value;
+    const name = form.name.value;
+    const email = form.email.value;
+console.log('Форма відправлена'); // для перевірки
+console.log({ name, email, quantity });
+    const message = `
+🛒 НОВЕ ЗАМОВЛЕННЯ:
+👤 Ім’я: ${name}
+📧 Пошта: ${email}
+📦 Кількість: ${quantity}
+`;
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.ok) {
+        alert('Замовлення надіслано!');
+        form.reset();
+      } else {
+        alert('Помилка при надсиланні.');
+      }
+    })
+    .catch(() => alert('Помилка мережі.'));
+  });
+</script>
 </body>
 </html>
