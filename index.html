@@ -416,28 +416,33 @@ position: absolute;
 <body>
 <script>
   window.onload = function () {
-    let countdownTime = 5 * 60 * 60 + 45 * 60; // 5h 45min у секундах
+    function startTimer(hoursId, minutesId, secondsId, totalSeconds) {
+      const hoursEl = document.getElementById(hoursId);
+      const minutesEl = document.getElementById(minutesId);
+      const secondsEl = document.getElementById(secondsId);
+      let countdownTime = totalSeconds;
 
-    const hoursEl = document.getElementById('hours');
-    const minutesEl = document.getElementById('minutes');
-    const secondsEl = document.getElementById('seconds');
+      const timer = setInterval(() => {
+        if (countdownTime <= 0) {
+          clearInterval(timer);
+          return;
+        }
 
-    const timer = setInterval(() => {
-      if (countdownTime <= 0) {
-        clearInterval(timer);
-        return;
-      }
+        countdownTime--;
 
-      countdownTime--;
+        const hrs = Math.floor(countdownTime / 3600);
+        const mins = Math.floor((countdownTime % 3600) / 60);
+        const secs = countdownTime % 60;
 
-      const hrs = Math.floor(countdownTime / 3600);
-      const mins = Math.floor((countdownTime % 3600) / 60);
-      const secs = countdownTime % 60;
+        hoursEl.textContent = String(hrs).padStart(2, '0');
+        minutesEl.textContent = String(mins).padStart(2, '0');
+        secondsEl.textContent = String(secs).padStart(2, '0');
+      }, 1000);
+    }
 
-      hoursEl.textContent = String(hrs).padStart(2, '0');
-      minutesEl.textContent = String(mins).padStart(2, '0');
-      secondsEl.textContent = String(secs).padStart(2, '0');
-    }, 1000);
+    const totalSeconds = 5 * 60 * 60 + 45 * 60; // 5 год 45 хв
+    startTimer('hours1', 'minutes1', 'seconds1', totalSeconds);
+    startTimer('hours2', 'minutes2', 'seconds2', totalSeconds);
   };
 </script>
   <div class="section white-block">
@@ -465,11 +470,11 @@ position: absolute;
 <div class="countdown">
   <p>До кінця акції залишилось:</p>
   <div class="time">
-    <span class="value" id="hours">05</span>
+    <span class="value" id="hours1">05</span>
     <span class="label">годин</span>
-    <span class="value" id="minutes">45</span>
+    <span class="value" id="minutes1">45</span>
     <span class="label">хвилин</span>
-    <span class="value" id="seconds">00</span>
+    <span class="value" id="seconds1">00</span>
     <span class="label">секунд</span>
   </div>
 </div>
@@ -617,14 +622,14 @@ position: absolute;
   </div>
   </div>
   <div class="ended2">
-    <div class="countdown">
+<div class="countdown">
   <p>До кінця акції залишилось:</p>
   <div class="time">
-    <span class="value" id="hours">05</span>
+    <span class="value" id="hours2">05</span>
     <span class="label">годин</span>
-    <span class="value" id="minutes">45</span>
+    <span class="value" id="minutes2">45</span>
     <span class="label">хвилин</span>
-    <span class="value" id="seconds">00</span>
+    <span class="value" id="seconds2">00</span>
     <span class="label">секунд</span>
   </div>
 </div>
